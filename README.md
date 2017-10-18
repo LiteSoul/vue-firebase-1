@@ -1,6 +1,8 @@
 # vue-firebase-1
 
-> A Vue.js project
+> A Vue.js project, based on [this tut](https://medium.com/@anas.mammeri/vue-2-firebase-how-to-build-a-vue-app-with-firebase-authentication-system-in-15-minutes-fdce6f289c3c).
+>
+> But with 2 changes. I'm trying tu use Firestore instead of Firebase, and I'm using the PWA Vue template instead of the webpack template.
 
 ## Build Setup
 
