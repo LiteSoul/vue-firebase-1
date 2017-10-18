@@ -1,31 +1,27 @@
 <template>
-	<div class="login">
-		<h3>Sign In</h3>
+	<div class="sign-up">
+		<p>Create a new account</p>
 		<input type="text" name="" id="" placeholder="Email">
 		<input type="password" name="" id="" placeholder="Password">
-		<button v-on:click="login">Connect</button>
-		<p>Don't have an account?
-			<router-link to="/sign-up">Create one</router-link>
-		</p>
+		<button type="submit">Sign Up</button>
+		<span>or go back to
+			<router-link to="/login">login</router-link>
+		</span>
 	</div>
 </template>
 
 <script>
 export default {
-	name: 'login',
+	name: 'signUp',
 	data () {
 		return {}
 	},
-	methods: {
-		login () {
-			this.$router.replace('hello')
-		}
-	}
+	methods: {}
 }
 </script>
 
 <style scoped>
-.login {
+.signUp {
 	margin-top: 40px
 }
 
@@ -36,18 +32,14 @@ input {
 }
 
 button {
-	margin-top: 20px;
+	margin-top: 10px;
 	width: 10%;
 	cursor: pointer;
 }
 
-p {
-	margin-top: 40px;
+span {
+	display: block;
+	margin-top: 20px;
 	font-size: 13px
-}
-
-p a {
-	text-decoration: underline;
-	cursor: pointer;
 }
 </style>
