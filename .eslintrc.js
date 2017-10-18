@@ -10,7 +10,7 @@ module.exports = {
     browser: true
   },
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-  extends: "standard",
+  extends: "eslint:recommended",
   // required to lint *.vue files
   plugins: ["html"],
   // add your custom rules here
@@ -21,6 +21,11 @@ module.exports = {
     "generator-star-spacing": 0,
     // allow debugger during development
     "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0,
-    "quotes": ["error", "single", { "avoidEscape": true, "allowTemplateLiterals": true }]
+    indent: ["error", "tab"],
+    quotes: [
+      "error",
+      "single",
+      { avoidEscape: true, allowTemplateLiterals: true }
+    ]
   }
 };
