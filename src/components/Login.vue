@@ -13,7 +13,7 @@
 <script>
 export default {
 	name: 'login',
-	data: function() {
+	data: function () {
 		return {
 			email: '',
 			password: ''
@@ -34,15 +34,11 @@ export default {
 		// 			console.log(error);
 		//		});
 		// }
-		signIn: function(){
-			firebase.auth().signInWithEmailAndPassword(this.email,this.password)
+		signIn: function () {
+			firebase.auth().signInWithEmailAndPassword(this.email, this.password)
 				.then(
-					function(user){
-						alert('You are now connected')
-					},
-					function(err){
-						alert('Oops. ' + err.message)
-					}
+				user => alert('You are now connected'),
+				err => alert('Oops. ' + err.message)
 				)
 		}
 	}
@@ -51,28 +47,28 @@ export default {
 
 <style scoped>
 .login {
-  margin-top: 40px;
+	margin-top: 40px;
 }
 
 input {
-  margin: 10px 0;
-  width: 20%;
-  padding: 15px;
+	margin: 10px 0;
+	width: 20%;
+	padding: 15px;
 }
 
 button {
-  margin-top: 20px;
-  width: 10%;
-  cursor: pointer;
+	margin-top: 20px;
+	width: 10%;
+	cursor: pointer;
 }
 
 p {
-  margin-top: 40px;
-  font-size: 13px;
+	margin-top: 40px;
+	font-size: 13px;
 }
 
 p a {
-  text-decoration: underline;
-  cursor: pointer;
+	text-decoration: underline;
+	cursor: pointer;
 }
 </style>

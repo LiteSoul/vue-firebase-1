@@ -4,14 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import firebase from 'firebase'
-var fbconfig = require('./fbconfig.js')
+import fbconfig from './fbconfig.js'
 
 Vue.config.productionTip = false
 
 // Initialize Firebase
 firebase.initializeApp(fbconfig)
-// Reference for eslint?
-var rootRef = firebase.database().ref()
 
 /* eslint-disable no-new */
 new Vue({

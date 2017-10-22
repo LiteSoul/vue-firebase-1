@@ -41,7 +41,7 @@ export default {
             alert("Your account has been created!");
           },
           function(err) {
-            alert("Oops. " + err.message);
+            alert("Oopsy. " + err.message);
           }
         );
     }
