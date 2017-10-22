@@ -10,11 +10,13 @@ Vue.config.productionTip = false
 
 // Initialize Firebase
 firebase.initializeApp(fbconfig)
+// Reference for eslint?
+var rootRef = firebase.database().ref()
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  template: '<App/>',
-  components: { App }
+	el: '#app',
+	router,
+	template: '<App/>',
+	components: { App }
 })

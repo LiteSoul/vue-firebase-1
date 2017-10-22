@@ -1,9 +1,9 @@
 <template>
 	<div class="login">
 		<h3>Sign In</h3>
-		<input type="text" name="" id="" placeholder="Email">
-		<input type="password" name="" id="" placeholder="Password">
-		<button v-on:click="login">Connect</button>
+		<input type="text" name="" v-model="email" placeholder="Email">
+		<input type="password" name="" v-model="password" placeholder="Password">
+		<button v-on:click="signIn">Connect</button>
 		<p>Don't have an account?
 			<router-link to="/sign-up">Create one</router-link>
 		</p>
@@ -13,12 +13,37 @@
 <script>
 export default {
 	name: 'login',
-	data () {
-		return {}
+	data: function() {
+		return {
+			email: '',
+			password: ''
+		}
 	},
 	methods: {
-		login () {
-			this.$router.replace('hello')
+		// signIn: function(){
+		// 	firebase.auth().signInWithEmailAndPassword(email, password)
+		// 		.catch(function(error) {
+		// 			// Handle Errors here.
+		// 			var errorCode = error.code;
+		// 			var errorMessage = error.message;
+		// 			if (errorCode === 'auth/wrong-password') {
+		// 				alert('Wrong password.');
+		// 			} else {
+		// 				alert(errorMessage);
+		// 			}
+		// 			console.log(error);
+		//		});
+		// }
+		signIn: function(){
+			firebase.auth().signInWithEmailAndPassword(this.email,this.password)
+				.then(
+					function(user){
+						alert('You are now connected')
+					},
+					function(err){
+						alert('Oops. ' + err.message)
+					}
+				)
 		}
 	}
 }
@@ -26,28 +51,28 @@ export default {
 
 <style scoped>
 .login {
-	margin-top: 40px
+  margin-top: 40px;
 }
 
 input {
-	margin: 10px 0;
-	width: 20%;
-	padding: 15px
+  margin: 10px 0;
+  width: 20%;
+  padding: 15px;
 }
 
 button {
-	margin-top: 20px;
-	width: 10%;
-	cursor: pointer;
+  margin-top: 20px;
+  width: 10%;
+  cursor: pointer;
 }
 
 p {
-	margin-top: 40px;
-	font-size: 13px
+  margin-top: 40px;
+  font-size: 13px;
 }
 
 p a {
-	text-decoration: underline;
-	cursor: pointer;
+  text-decoration: underline;
+  cursor: pointer;
 }
 </style>
