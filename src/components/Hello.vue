@@ -34,15 +34,27 @@
 				<a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a>
 			</li>
 		</ul>
+		<button v-on:click="logout">Logout</button>
 	</div>
 </template>
 
 <script>
+/* eslint-disable */
+import firebase from "firebase";
+/* eslint-enable */
 export default {
   name: 'hello',
   data() {
     return {
       msg: 'Welcome to Your Vue.js PWA'
+    }
+  },
+  methods: {
+    logout: function() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => this.$router.replace('login'))
     }
   }
 }
@@ -67,5 +79,15 @@ li {
 
 a {
   color: #35495e;
+}
+button {
+  padding: 10px 20px;
+  background: green;
+  color: whitesmoke;
+  font-weight: bold;
+  border: none;
+  border-radius: 22px;
+  outline: 0;
+  cursor: pointer;
 }
 </style>

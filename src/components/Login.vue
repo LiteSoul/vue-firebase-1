@@ -1,9 +1,11 @@
 <template>
 	<div class="login">
 		<h3>Sign In</h3>
-		<input type="text" name="" v-model="email" placeholder="Email">
-		<input type="password" name="" v-model="password" placeholder="Password">
-		<button v-on:click="signIn">Connect</button>
+		<form action="">
+			<input type="text" name="" v-model="email" placeholder="Email">
+			<input type="password" name="" v-model="password" placeholder="Password">
+			<button v-on:click="signIn">Connect</button>
+		</form>
 		<p>Don't have an account?
 			<router-link to="/sign-up">Create one</router-link>
 		</p>
@@ -42,7 +44,7 @@ export default {
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
         .then(
-          user => alert('You are now connected' + user),
+          () => this.$router.replace('hello'),
           err => alert('Oops. ' + err.message)
         )
     }

@@ -1,12 +1,15 @@
 <template>
 	<div class="sign-up">
 		<p>Create a new account</p>
-		<input type="text" name="" v-model="email" placeholder="Email">
-		<input type="password" name="" v-model="password" placeholder="Password">
-		<button type="submit" v-on:click="signUp">Sign Up</button>
-		<span>or go back to
-			<router-link to="/login">login</router-link>
-		</span>
+		<form action="">
+			<input type="text" name="" v-model="email" placeholder="Email">
+			<input type="password" name="" v-model="password" placeholder="Password">
+			<button type="submit" v-on:click="signUp">Sign Up</button>
+			<span>or go back to
+				<router-link to="/login">login</router-link>
+			</span>
+		</form>
+		
 	</div>
 </template>
 
@@ -28,19 +31,8 @@ export default {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
-        // .catch(function(error) {
-        //   // Handle Errors here.
-        //   var errorCode = error.code
-        //   var errorMessage = error.message
-        //   if (errorCode == 'auth/weak-password') {
-        //     alert('The password is too weak.')
-        //   } else {
-        //     alert(errorMessage)
-        //   }
-        //   //console.log(error)
-        // })
         .then(
-          user => alert('Your account has been created!' + user),
+          () => this.$router.replace('hello'),
           err => alert('Oops. ' + err.message)
         )
     }
