@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: "signUp",
+  name: 'signUp',
   data() {
     return {};
   },
@@ -38,10 +38,10 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
           function(user) {
-            alert("Your account has been created!");
+            alert('Your account has been created!' + user);
           },
           function(err) {
-            alert("Oopsy. " + err.message);
+            alert('Oopsy. ' + err.message);
           }
         );
     }
