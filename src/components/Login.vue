@@ -11,15 +11,16 @@
 </template>
 
 <script>
-import firebase from 'firebase';
-
+/* eslint-disable */
+import firebase from "firebase";
+/* eslint-enable */
 export default {
   name: 'login',
   data: function() {
     return {
       email: '',
       password: ''
-    };
+    }
   },
   methods: {
     // signIn: function(){
@@ -43,10 +44,10 @@ export default {
         .then(
           user => alert('You are now connected' + user),
           err => alert('Oops. ' + err.message)
-        );
+        )
     }
   }
-};
+}
 </script>
 
 <style scoped>

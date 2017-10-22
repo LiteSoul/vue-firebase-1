@@ -5,7 +5,7 @@ import Hello from '@/components/Hello'
 import Login from '@/components/Login'
 import SignUp from '@/components/SignUp'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
 	routes: [
@@ -25,4 +25,4 @@ export default new Router({
 			component: SignUp
 		}
 	]
-});
+})

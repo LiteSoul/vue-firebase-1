@@ -11,44 +11,41 @@
 </template>
 
 <script>
-import firebase from 'firebase';
+/* eslint-disable */
+import firebase from "firebase";
+/* eslint-enable */
 
 export default {
   name: 'signUp',
   data() {
-    return {};
+    return {
+      email: '',
+      password: ''
+    }
   },
   methods: {
-    // signUp: function(){
-    // 	firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-    // 		.catch(function(error) {
-    // 			// Handle Errors here.
-    // 			var errorCode = error.code;
-    // 			var errorMessage = error.message;
-    // 			if (errorCode == 'auth/weak-password') {
-    // 				alert('The password is too weak.');
-    // 			} else {
-    // 				alert(errorMessage);
-    // 			}
-    // 			console.log(error);
-    // 		});
-    // 		.then??
-    // }
     signUp: function() {
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
+        // .catch(function(error) {
+        //   // Handle Errors here.
+        //   var errorCode = error.code
+        //   var errorMessage = error.message
+        //   if (errorCode == 'auth/weak-password') {
+        //     alert('The password is too weak.')
+        //   } else {
+        //     alert(errorMessage)
+        //   }
+        //   //console.log(error)
+        // })
         .then(
-          function(user) {
-            alert('Your account has been created!' + user);
-          },
-          function(err) {
-            alert('Oopsy. ' + err.message);
-          }
-        );
+          user => alert('Your account has been created!' + user),
+          err => alert('Oops. ' + err.message)
+        )
     }
   }
-};
+}
 </script>
 
 <style scoped>
